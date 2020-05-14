@@ -1,4 +1,5 @@
-# AWS - List of labs in the Ryan Kroonenburg and Faye Ellis
+# AWS - List of labs
+#### Tutorial by Ryan Kroonenburg and Faye Ellis ####
 IAM - Identity Access Management
 EC2 - Elastic Compute 2
 Route 53
