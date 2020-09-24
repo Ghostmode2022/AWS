@@ -40,4 +40,8 @@ grant all on wp_site3.* to 'wp_site3_user'@'localhost' identified by 'unsecurepw
 #if we execute the following instead of the above is
 grant all on wp_site3.* to 'wp_site3_user';
 -> ERROR 1410 (42000): You are not allowed to create a user with GRANT
-
+#flush priviledges
+flush priviledges;
+#need to make changes in the wp_config.php to connect the newly created database with wordpress
+#need to understand what is AUTH_KEY, SECURE_AUTH_KEY, LOGGED_IN_KEY, NONCE_KEY, AUTH_SALT, SECURE_AUTH_SALT, LOGGED_IN_SALT, NONCE_sALT
+#need to make changes in the site available and site enabled directory for making changes in the apache webserver
