@@ -28,7 +28,16 @@ rm latest.tar.gz
 #create database for each website seperately
 mysql
 CREATE DATABASE wp_site3 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-->| Warning | 3719 | 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. |
-->| Warning | 3778 | 'utf8_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.|
+-> | Warning | 3719 | 'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous. |
+-> | Warning | 3778 | 'utf8_unicode_ci' is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.|
 #make a user for that database and grant him some privileges
 grant all on wp_site3.* to 'wp_site3_user'@'localhost' identified by 'unsecurepw';
+#wp_site3.* means all the tables in the database wp_site3 
+#'wp_site3_user' is the user name to whom the access is granted
+#'localhost' is the ip of the host or may be localhost when executed in the local machine
+#'unsecurepw' is the password which will be used
+-> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'identified by 'unsecurepw'' at line 1
+#if we execute the following instead of the above is
+grant all on wp_site3.* to 'wp_site3_user';
+-> ERROR 1410 (42000): You are not allowed to create a user with GRANT
+
