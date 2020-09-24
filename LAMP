@@ -19,3 +19,5 @@ sudo journalctl -xe
 cd /var/www/html/
 #open the default configuration server
 sudo nano /etc/apache2/sites-available/000-default.conf
+#to download wordpress
+wget https://wordpress.org/latest.tar.gz
