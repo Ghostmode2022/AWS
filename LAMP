@@ -15,3 +15,7 @@ sudo service apache2 start
 sudo systemctl apache2 status
 #to check if there is any issue in the configuration file
 sudo journalctl -xe
+#the website files is located in this place with the folder name as the domain name
+cd /var/www/html/
+#open the default configuration server
+sudo nano /etc/apache2/sites-available/000-default.conf
