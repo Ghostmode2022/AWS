@@ -8,3 +8,5 @@ $ sudo apt install mysql-server
 Verify MySQL service status, though it starts automatically after its successful installation
 $ sudo systemctl status mysql
 Make the installation secure:
+
+<https://linuxhint.com/install_mysql_ubuntu_2004/>
