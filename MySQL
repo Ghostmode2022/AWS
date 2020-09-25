@@ -1,0 +1,10 @@
+MySQL client - used to connect with MySQL server
+MySQL server - used to host variou databases
+
+Installing MySQL:
+$ sudo apt update
+$ sudo apt install mysql-server
+
+Verify MySQL service status, though it starts automatically after its successful installation
+$ sudo systemctl status mysql
+Make the installation secure:
