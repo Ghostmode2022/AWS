@@ -1,3 +1,6 @@
+<https://linuxhint.com/install_mysql_ubuntu_2004/>
+<What happens if a user forgets password in mysql>
+
 MySQL client - used to connect with MySQL server
 MySQL server - used to host variou databases
 
@@ -7,6 +10,41 @@ $ sudo apt install mysql-server
 
 Verify MySQL service status, though it starts automatically after its successful installation
 $ sudo systemctl status mysql
+
 Make the installation secure:
 
-<https://linuxhint.com/install_mysql_ubuntu_2004/>
+Login to mysql with a specific user and password(in the below command root can be replaced with any username)
+mysql -u root -p
+
+Show all the available databases
+SHOW DATABASES;
+
+Delete a particular database
+DROP DATABASE <database_name>;
+
+Create database with default character set of utf8 collate utf8_unicode_ci
+<MariaDB Command> create database <database_name> default character set utf8 collate utf8_unicode_ci;
+<MySQL Command> create database <database_name> character set UTF8mb4 collate utf8mb4_bin;
+Accoding to MySQL utf8 is an alias of UTF8mb4. Hence we should use UTF8mb4 collate utf8mb4_bin instead of utf8 collate utf8_unicode_ci
+
+Create a user for the database and give some priviledges --> newuser should be replaced with the user name and password should be replaced by the password
+<MariaDB Command> grant all on <database_name>.* to '<user_name>'@'<localhost or ip_address_of_host>' identified by '<password>'
+<MySQL Command> CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+<MySQL Command> GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost'; ---> the * refer to the database and table respectively.
+<MySQL Command> FLUSH PRIVILEGES;
+To provide a specific user with a permission, you can use this framework:
+<MySQL Command> GRANT <type_of_permission> ON <database_name>.<table_name> TO ‘username’@'localhost’;
+<MySQL Command> REVOKE <type_of_permission> ON <database_name>.<table_name> FROM ‘username’@‘localhost’;
+<MySQL Command> SHOW GRANTS FOR 'username'@'localhost';
+<MySQL Command> DROP USER ‘username’@‘localhost’;
+Types of priviledges are as follow:
+->ALL PRIVILEGES- allows a MySQL user full access to a designated database (if no database is selected, global access)
+->CREATE- allows them to create new tables or databases
+->DROP- allows them to them to delete tables or databases
+->DELETE- allows them to delete rows from tables
+->INSERT- allows them to insert rows into tables
+->SELECT- allows them to use the SELECT command to read through databases
+->UPDATE- allow them to update table rows
+->GRANT OPTION- allows them to grant or remove other users’ privileges
+
+For Wordpress the commands that need to be run:
