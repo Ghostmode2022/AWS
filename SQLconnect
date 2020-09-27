@@ -1,0 +1,2 @@
+cp wp-config-sample.php wp-config.php
+nano wp-config.php
