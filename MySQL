@@ -48,3 +48,17 @@ Types of priviledges are as follow:
 ->GRANT OPTION- allows them to grant or remove other users’ privileges
 
 For Wordpress the commands that need to be run:
+sudo apt update
+sudo apt install mysql-server
+In the MySQL command prompt
+#create database
+create database <database_name> character set UTF8mb4 collate utf8mb4_bin;
+    create database wp_site1 character set UTF8mb4 collate utf8mb4_bin;
+#create user and grant all priviledges
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+    CREATE USER wp_site1_user@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON <database>.<table> TO '<newuser>'@'localhost';
+    GRANT ALL PRIVILEGES ON wp_site1.* TO 'wp_site1_user'@'localhost';
+#flush priviledges
+FLUSH PRIVILEGES;
+we now have an empty database ready to hookup to. 
