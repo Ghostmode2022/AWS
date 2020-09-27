@@ -1,0 +1,8 @@
+Install and setup MySQL - <https://github.com/sid7590/AWS/blob/master/MySQL>
+Connect MySQL with wordpress installation - same as above
+
+Make the required changes in the siteName.conf file. It is located in /etc/apache2/sites-available
+Run the below command from within the directory /etc/apache2/sites-enabled
+a2ensite siteName.conf
+systemctl reload apache2
+A new file with the sitrName.conf should be available within the /etc/apache2/sites-enabled director
