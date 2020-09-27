@@ -1,2 +1,12 @@
 cp wp-config-sample.php wp-config.php
 nano wp-config.php
+Go to MySQL settign and 
+                       replace database_name_here with wp_site3
+                       replace username_here with with wp_site_user3
+                       replace password_here with password
+                       replace utf8 with UTF8mb4
+                       replace      with utf8mb4_bin
+Go to Authentication Unique Keys and Salts
+copy the given url and paste in the web browser to get authentication unique keys and salts
+
+Save the file to finish the linking procedure of wordpress to the newly created database
