@@ -1,8 +1,0 @@
-ssh into the amazon aws 
-go to Dropbox(nevada) and download the pem file
-chmod 400 /path_to_key/my_key.pem
-login to aws -> go to services -> ec2 -> running instances
-select the instance and make sure your key (pem file) matches your key pair name
-search for the public_dns_name for the particular instance you want to open
-username would be "ubuntu"
-ssh -i /path_to_key/my_key.pem user_name@public_dns_name
